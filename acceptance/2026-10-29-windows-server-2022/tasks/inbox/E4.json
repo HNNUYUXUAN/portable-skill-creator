@@ -1,0 +1,7 @@
+{
+  "step": "E4",
+  "status": "executed",
+  "summary": "verify on source returned pass, structure_only, 47 files, exit 0",
+  "evidence": "evidence/verify-source.txt",
+  "next": "Export skill"
+}

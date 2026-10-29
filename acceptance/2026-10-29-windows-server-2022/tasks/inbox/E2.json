@@ -1,0 +1,7 @@
+{
+  "step": "E2",
+  "status": "failed",
+  "summary": "Original scripts/bootstrap.ps1 aborted at OS build gate: build 20348 < 22000, also with -Prepare",
+  "evidence": "evidence/bootstrap-original.txt; evidence/bootstrap-original-prepare.txt",
+  "next": "Isolate gate with a local patched copy"
+}

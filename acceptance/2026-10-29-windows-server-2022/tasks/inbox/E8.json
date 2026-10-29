@@ -1,0 +1,7 @@
+{
+  "step": "E8",
+  "status": "executed",
+  "summary": "Authored SKILL.md, zh-CN/en task and acceptance modules, examples/input.txt, delivery.json",
+  "evidence": "skills-src/acceptance-note-triage; entry 4 sections, 13 rule IDs per language",
+  "next": "Structure check"
+}

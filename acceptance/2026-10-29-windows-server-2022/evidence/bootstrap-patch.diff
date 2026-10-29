@@ -1,0 +1,10 @@
+--- source/scripts/bootstrap.ps1	2026-10-29 23:30:39.670886400 +0800
++++ patched/scripts/bootstrap.ps1	2026-10-29 23:31:41.156277200 +0800
+@@ -1,6 +1,6 @@
+ param([string]$Python, [string]$Root, [switch]$Prepare)
+ $ErrorActionPreference = 'Stop'
+-if ([Environment]::OSVersion.Version.Build -lt 22000) { throw 'Windows 11 or newer build required; other systems untested' }
++if ([Environment]::OSVersion.Version.Build -lt 22000) { Write-Warning ('LOCAL ACCEPTANCE PATCH: build ' + [Environment]::OSVersion.Version.Build + ' < 22000 gate relaxed; continuing as unsupported environment') }
+ if (-not $Root) { $Root = Join-Path $env:LOCALAPPDATA 'portable-skill-creator' }
+ $Root = [IO.Path]::GetFullPath($Root)
+ if (-not [Environment]::Is64BitOperatingSystem -or [Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString() -ne 'X64') { throw 'Windows x64 required' }

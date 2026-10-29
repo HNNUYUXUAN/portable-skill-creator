@@ -1,0 +1,7 @@
+{
+  "step": "E11",
+  "status": "executed",
+  "summary": "Recipient run zh: independent agent read SKILL.md + zh-CN modules, wrote runs/zh/result-zh.md; checker matched 2/2/1/1 with order and verbatim text",
+  "evidence": "evidence/check-zh.json; runs/zh/result-zh.md",
+  "next": "English run"
+}

@@ -1,0 +1,25 @@
+=== Built-in CLI probe for an isolated session (2026-10-29 23:33-23:34 +08:00) ===
+
+CLI: C:\Program Files\WorkBuddy\resources\app.asar.unpacked\cli\bin\codebuddy
+Package: @genie/agent-cli 2.165.0
+
+1) codebuddy --help
+   Exit code 0, usage printed.
+   Non-fatal startup noise:
+     fetch config failed TypeError: Right-hand side of 'instanceof' is not callable
+     at setProxy (dist/codebuddy-lite-wb.mjs)
+   --model supported list includes: ... deepseek-v4.1-flash ... (used as model-id evidence)
+   --print / --output-format json / --session-id / --port options exist.
+
+2) codebuddy -p "Reply with exactly: PROBE_OK" --model deepseek-v4.1-flash --output-format json
+   Exit code 1: Error: listen EADDRINUSE: address already in use 127.0.0.1:55171
+
+3) same command with --port 45231
+   Exit code 0, stdout: Authentication required. Please use /login command to sign in to your account
+
+Conclusion:
+  The CLI cannot start an authenticated headless session without a separate interactive login.
+  No login was attempted (would need the operator's credentials).
+  Therefore no truly isolated WorkBuddy session could be created from inside this session.
+  The recipient acceptance in this run used independent agents with fresh context instead,
+  and a copy-paste prompt for a real new session is saved in HANDOFF.md.

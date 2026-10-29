@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "findings": [],
+  "coverage": "heuristic; review dynamic dependencies and external resources",
+  "executed": false
+}

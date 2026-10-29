@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "id": "bbb0355b-7c1d-49ef-9a27-a7b3552b603d",
+  "goal": "Author bilingual acceptance-note-triage skill with portable-skill-creator, export and run recipient acceptance",
+  "status": "finished_with_gaps",
+  "host": "WorkBuddy 5.9.3 Windows build 20348",
+  "model": "deepseek-v4.1-flash"
+}

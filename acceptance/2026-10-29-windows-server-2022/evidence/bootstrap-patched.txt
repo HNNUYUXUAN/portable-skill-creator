@@ -1,0 +1,18 @@
+=== PATCHED bootstrap.ps1 (only OS build gate relaxed) ===
+TIME: 2026-10-29T23:31:50.3653985+08:00
+CMD: & patched\scripts\bootstrap.ps1 -Root <ws>\runtime   (no -Python, no -Prepare)
+EXITCODE: 0
+STDOUT/STDERR:
+{
+  "status": "ready",
+  "scope": "creator_runtime_only",
+  "python": "C:\\Program Files\\Python312\\python.exe",
+  "cloud_api_called": false
+}
+PARSED_JSON: {
+  "status": "ready",
+  "scope": "creator_runtime_only",
+  "python": "C:\\Program Files\\Python312\\python.exe",
+  "cloud_api_called": false
+}
+STATUS=ready SCOPE=creator_runtime_only PYTHON=C:\Program Files\Python312\python.exe

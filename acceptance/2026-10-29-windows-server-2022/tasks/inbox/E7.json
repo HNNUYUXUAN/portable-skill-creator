@@ -1,0 +1,7 @@
+{
+  "step": "E7",
+  "status": "unknown",
+  "summary": "Host skill-registry discovery not confirmed: current session workspace differs from acceptance project; CLI headless needs separate login",
+  "evidence": "skill_management list returned empty; evidence/cli-probe.txt",
+  "next": "Ask operator to open project and start new session"
+}

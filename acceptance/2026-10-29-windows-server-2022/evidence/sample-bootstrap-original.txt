@@ -1,0 +1,5 @@
+=== sample json-to-csv bootstrap.ps1 -Prepare (ORIGINAL, in dir with Chinese + spaces) ===
+DIR: C:\Users\admin\WorkBuddy\psc-acceptance-20261029\samples\样例 目录 空格测试\json-to-csv
+TIME: 2026-10-29T23:35:14.5041030+08:00
+SHA256 before: 450689348F20520667BDC4F88934FC59A64022F4B20327193E112D1CE224C165
+EXCEPTION: Windows 11 or newer build required; other systems untested

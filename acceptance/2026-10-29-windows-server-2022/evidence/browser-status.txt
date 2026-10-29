@@ -1,0 +1,51 @@
+=== Browser route status check (2026-10-29 23:35-23:37 +08:00) ===
+
+1) Extension installed in Chrome?
+   YES. C:\Users\admin\AppData\Local\Google\Chrome\User Data\Default\Extensions\ajnnogdfpilbhkeggdjlcokgglijmdde\0.2.7_0
+   manifest: name=WorkBuddy version=0.2.7
+   permissions include: tabs, tabGroups, scripting, webNavigation, debugger, nativeMessaging, alarms, storage
+   Chrome processes running: 21
+
+2) Client bridge (Native Messaging host) registered?
+   NO. Extension background.js calls connectNative(HOST_NAME) with HOST_NAME = "com.workbuddy.extension".
+   Checked and NOT REGISTERED:
+     HKCU\Software\Google\Chrome\NativeMessagingHosts\com.workbuddy.extension
+     HKLM\Software\Google\Chrome\NativeMessagingHosts\com.workbuddy.extension
+     HKCU\Software\Microsoft\Edge\NativeMessagingHosts\com.workbuddy.extension
+   Registered Chrome native hosts on this machine (none belong to WorkBuddy):
+     com.kingsoft.chrome.extension.host
+     com.microsoft.browsercore
+     com.openai.codexextension
+     com.quark.hostclient
+     org.freedownloadmanager.fdm5.cnh
+   No com.workbuddy.extension.json manifest found on disk.
+
+3) Target tab shared with the current task?
+   UNKNOWN / not reachable. No browser-control tool or browser-use skill is present in this session
+   (the builtin skill set contains no browser-control skill), so tab sharing cannot be requested.
+
+4) Page readable through the connected browser?
+   NOT ATTEMPTED - blocked before step 3.
+
+5) Supplementary (NOT browser evidence, NOT counted):
+   A plain HTTP text fetch of https://agentskills.io/home returned page title
+   "Agent Skills Overview - Agent Skills". This is a text fetch by the assistant runtime,
+   not a read through the WorkBuddy-connected browser. It is recorded only to show the page is
+   reachable from this machine; it must not be used as the browser acceptance result.
+
+Conclusion: extension installed = yes; client bridge connected = no; tab shared = unknown;
+browser read = BLOCKED. Public page read success would in any case not prove account login or
+institutional access.
+
+=== Configuration steps needed from the operator ===
+a. In WorkBuddy: Settings > Agent > Browser control -> enable it (this is what installs the
+   com.workbuddy.extension native messaging host registration).
+b. Restart the WorkBuddy client so the host registration is written, then fully restart Chrome
+   (native hosts are read at browser start).
+c. In Chrome: chrome://extensions -> confirm "WorkBuddy" 0.2.7 is enabled and its service worker
+   shows no error. If it still cannot connect, remove and reinstall from the official Chrome Web
+   Store listing, then repeat step b.
+d. Open https://agentskills.io/home in a tab, and share ONLY that tab with the current task
+   (extension popup / task browser panel).
+e. Re-run the page-evidence step; record final URL, title, one checkable fact, and read time.
+No other browser was installed and no global browser configuration was modified.

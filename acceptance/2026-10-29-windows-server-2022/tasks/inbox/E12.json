@@ -1,0 +1,7 @@
+{
+  "step": "E12",
+  "status": "executed",
+  "summary": "Recipient run en: independent agent read SKILL.md + en modules, wrote runs/en/result-en.md; checker matched 2/2/1/1",
+  "evidence": "evidence/check-en.json; runs/en/result-en.md",
+  "next": "Runtime samples"
+}

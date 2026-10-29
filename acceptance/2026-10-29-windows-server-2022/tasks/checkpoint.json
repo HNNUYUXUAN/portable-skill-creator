@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "session": {
+    "schema_version": 1,
+    "id": "bbb0355b-7c1d-49ef-9a27-a7b3552b603d",
+    "goal": "Author bilingual acceptance-note-triage skill with portable-skill-creator, export and run recipient acceptance",
+    "status": "finished_with_gaps",
+    "host": "WorkBuddy 5.9.3 Windows build 20348",
+    "model": "deepseek-v4.1-flash"
+  },
+  "events": 16,
+  "unresolved": [
+    {
+      "step": "E2",
+      "status": "failed",
+      "summary": "Original scripts/bootstrap.ps1 aborted at OS build gate: build 20348 < 22000, also with -Prepare",
+      "evidence": "evidence/bootstrap-original.txt; evidence/bootstrap-original-prepare.txt",
+      "next": "Isolate gate with a local patched copy",
+      "id": "d5aeea39-6f9a-4ace-8373-8fbf3093d6ec",
+      "time": "2026-10-29T15:33:23.463197+00:00"
+    },
+    {
+      "step": "E7",
+      "status": "unknown",
+      "summary": "Host skill-registry discovery not confirmed: current session workspace differs from acceptance project; CLI headless needs separate login",
+      "evidence": "skill_management list returned empty; evidence/cli-probe.txt",
+      "next": "Ask operator to open project and start new session",
+      "id": "c207fe0a-0ca1-4ab7-93ca-6fb11955896e",
+      "time": "2026-10-29T15:33:24.604127+00:00"
+    },
+    {
+      "step": "E15",
+      "status": "unknown",
+      "summary": "page-evidence browser read blocked: Chrome extension 0.2.7 installed but native messaging host com.workbuddy.extension not registered; no browser-control tool in this session",
+      "evidence": "evidence/browser-status.txt",
+      "next": "Operator enables browser control and shares the tab",
+      "id": "85910520-3fec-47fc-97c3-a5ce4a48ee40",
+      "time": "2026-10-29T15:36:34.326513+00:00"
+    }
+  ],
+  "last": {
+    "step": "E16",
+    "status": "executed",
+    "summary": "Wrote acceptance-report.md, acceptance-results.json, HANDOFF.md with copy-paste recipient prompt and browser config steps",
+    "evidence": "acceptance-report.md; acceptance-results.json; HANDOFF.md",
+    "next": "Operator handoff",
+    "id": "9f37dd9c-9251-44af-b305-3433890fddfa",
+    "time": "2026-10-29T15:38:16.577522+00:00"
+  }
+}

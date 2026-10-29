@@ -1,0 +1,8 @@
+CWD: /c/Users/admin/WorkBuddy/psc-acceptance-20261029/samples/样例 目录 空格测试/json-to-csv
+CMD: "/c/Program Files/Python312/python.exe" scripts/convert.py examples/input.json "out/结果 输出.csv"
+EXITCODE=0
+--- output bytes ---
+0000000   n   a   m   e   ,   c   o   u   n   t  \r  \n   " 344 270 255
+0000020 346 226 207   ,       i   t   e   m   "   ,   2  \r  \n   s   e
+0000040   c   o   n   d   ,   0  \r  \n
+0000050

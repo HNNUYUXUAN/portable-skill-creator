@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "acceptance-note-triage",
+  "version": "0.1.0",
+  "files": [
+    "SKILL.md",
+    "examples/input.txt",
+    "references/en/acceptance.md",
+    "references/en/task.md",
+    "references/zh-CN/acceptance.md",
+    "references/zh-CN/task.md"
+  ],
+  "requirements": [
+    {
+      "id": "host-files",
+      "kind": "host",
+      "handling": "Host must read the input text and write one Markdown result file. No scripts or packages are needed."
+    }
+  ]
+}

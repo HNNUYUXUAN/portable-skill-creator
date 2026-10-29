@@ -1,0 +1,4 @@
+RE-EXPORT TO EXISTING DIR (conflict test)
+TIME: 2026-10-29T23:36:27+08:00
+{"status": "error", "message": "Destination must be new and outside source"}
+EXITCODE=2

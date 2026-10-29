@@ -1,0 +1,5 @@
+=== ORIGINAL bootstrap.ps1 (unmodified repo copy) ===
+TIME: 2026-10-29T23:30:59.9995128+08:00
+CMD: & 'C:\Users\admin\WorkBuddy\psc-acceptance-20261029\source\scripts\bootstrap.ps1' -Root 'C:\Users\admin\WorkBuddy\psc-acceptance-20261029\runtime' ; EXITCODE captured
+EXCEPTION: Windows 11 or newer build required; other systems untested
+EXITCODE: n/a (terminating error)

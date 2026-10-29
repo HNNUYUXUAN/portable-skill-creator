@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "hashes": {
+    "SKILL.md": "758092a6f1822cab627997face4c4e101f9c53e425693369a01f044245fabb11",
+    "examples/input.txt": "258d9e8af60b260d165251fa34c9e792f1bc158c1749f963091398e54d74b6eb",
+    "references/en/acceptance.md": "8c0323100334c3887cc710d01f7ced32e1ced725dc1505884e14095802c69f5b",
+    "references/en/task.md": "95599f6e1e7b4a2b6e1e880979f1e05bd7ab9489d89cb5bc7d3fcf6ce6a91618",
+    "references/zh-CN/acceptance.md": "2d73af0e8786f3af866cf0e050a8c2e04dde538c23c2c615afa64e210950c4f3",
+    "references/zh-CN/task.md": "26bfece9f37d191b3b5de15d4763829b3fe5478eff95943b88fc3a8155a059d0"
+  }
+}

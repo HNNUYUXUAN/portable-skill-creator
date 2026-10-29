@@ -1,0 +1,6 @@
+{
+  "status": "exported",
+  "path": "C:\\Users\\admin\\WorkBuddy\\psc-acceptance-20261029\\recipient\\acceptance-note-triage",
+  "validation": "structure_only"
+}
+EXIT=0

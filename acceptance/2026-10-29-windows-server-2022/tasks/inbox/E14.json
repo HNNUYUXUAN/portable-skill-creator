@@ -1,0 +1,7 @@
+{
+  "step": "E14",
+  "status": "executed",
+  "summary": "export conflict check: second export to the same recipient path rejected with exit 2, existing directory untouched",
+  "evidence": "evidence/export-conflict.txt",
+  "next": "Report"
+}

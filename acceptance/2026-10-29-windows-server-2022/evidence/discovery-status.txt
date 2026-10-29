@@ -1,0 +1,31 @@
+=== Skill discovery status (2026-10-29 23:31-23:40 +08:00) ===
+
+Installed path:
+  C:\Users\admin\WorkBuddy\psc-acceptance-20261029\.codebuddy\skills\portable-skill-creator
+  (49 files, verify pass, installed.json present)
+
+1) Files readable by WorkBuddy tools?
+   YES. SKILL.md, references/zh-CN/scope.md, capture.md, dependencies.md, author.md,
+   acceptance.md, commands.md, workbuddy.md, onboard.md were opened with the host Read tool
+   and the instructions in them were executed (session records, verify, export, inspect).
+
+2) Present in this session's skill list?
+   NO. The active session skill list contains builtin/plugin skills only; portable-skill-creator
+   is absent. Reason: WorkBuddy project-level skills live in <working directory>/.codebuddy/skills,
+   and this session's working directory is C:\Users\admin\WorkBuddy\2026-10-29-23-30-01,
+   not the acceptance project.
+
+3) skill_management list
+   Returned: {"skills": [], "message": "No user-installed skills are currently enabled."}
+   This tool only covers user-installed enabled skills, so it neither proves nor disproves
+   project-level discovery. Recorded as insufficient evidence.
+
+4) Skill cache snapshot
+   ~/.workbuddy/.skill-list-cache.json contained 46 builtin/plugin skills, none named
+   portable-skill-creator; watch dirs are user-level and builtin roots, not the acceptance project.
+
+Conclusion:
+  installation complete = yes
+  host can read the files = yes
+  host skill registry discovery = NOT CONFIRMED (needs the acceptance project as working directory)
+  "files copied" was not treated as "skill loaded".

@@ -1,0 +1,6 @@
+data_rows= 2
+fields= ['name', 'count']
+row1_name= '中文, item' row1_count= 2 is_int= True
+row2_name= 'second' row2_count= 0
+comma_field_roundtrip= True
+sha256= e1ddb652f253414994253c0627295bad3175b6827c31ca5db3aed78e07b912aa

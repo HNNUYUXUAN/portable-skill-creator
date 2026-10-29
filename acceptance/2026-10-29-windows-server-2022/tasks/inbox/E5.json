@@ -1,0 +1,7 @@
+{
+  "step": "E5",
+  "status": "executed",
+  "summary": "Exported to acceptance project .codebuddy/skills/portable-skill-creator (target absent before run)",
+  "evidence": "evidence/export-source.txt; 49 files including installed.json",
+  "next": "Confirm host discovery"
+}

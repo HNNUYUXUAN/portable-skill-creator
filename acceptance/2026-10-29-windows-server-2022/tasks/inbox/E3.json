@@ -1,0 +1,7 @@
+{
+  "step": "E3",
+  "status": "executed",
+  "summary": "Patched copy (gate relaxed only) returned ready with real Python 3.12.10; diff saved",
+  "evidence": "evidence/bootstrap-patched.txt; evidence/bootstrap-patch.diff",
+  "next": "Treat runtime as available; keep original result separate"
+}

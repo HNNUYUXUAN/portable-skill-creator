@@ -1,0 +1,7 @@
+{
+  "step": "E13",
+  "status": "executed",
+  "summary": "json-to-csv sample in directory with Chinese and spaces: convert exit 0, CSV parsed 2 rows, quoted comma field, re-run exit 2 and file hash unchanged",
+  "evidence": "evidence/sample-convert.txt; evidence/sample-parse.txt; evidence/sample-overwrite-refusal.txt",
+  "next": "Browser sample"
+}

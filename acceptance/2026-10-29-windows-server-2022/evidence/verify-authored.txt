@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "errors": [],
+  "scope": "structure_only",
+  "files": 6
+}

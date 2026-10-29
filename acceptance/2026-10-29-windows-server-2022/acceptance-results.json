@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "acceptance_id": "psc-acceptance-20261029",
+  "generated_at": "2026-10-29T23:45:00+08:00",
+  "workspace": "C:/Users/admin/WorkBuddy/psc-acceptance-20261029",
+  "executor": {
+    "host": "WorkBuddy 5.9.3",
+    "host_cli": "@genie/agent-cli 2.165.0",
+    "model_observed": "deepseek-v4.1-flash",
+    "model_source": "conversation runtime identity + CLI supported model list",
+    "model_config_file": "unknown (models.json empty)",
+    "session_id": "bbb0355b-7c1d-49ef-9a27-a7b3552b603d"
+  },
+  "environment": {
+    "os_caption": "Microsoft Windows Server 2022 Datacenter",
+    "os_version": "10.0.20348",
+    "os_build": "20348",
+    "os_matches_user_description": false,
+    "architecture": "AMD64",
+    "os_64bit": true,
+    "cpu": "AMD EPYC 9T24 96-Core Processor (8 cores / 16 threads)",
+    "ram_gb": 32,
+    "machine_model": "Alibaba Cloud ECS",
+    "powershell_execution_policy_localmachine": "RemoteSigned (not modified, not bypassed)",
+    "python": {
+      "path": "C:\\Program Files\\Python312\\python.exe",
+      "version": "3.12.10",
+      "source": "returned by bootstrap.ps1 (patched copy), auto-detected; not guessed"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/HNNUYUXUAN/portable-skill-creator.git",
+    "clone_dir": "source",
+    "branch": "main",
+    "commit": "4174224ba419dffab66d4e7e3d49cc28175734a2",
+    "commit_time": "2026-10-29T21:03:39+08:00"
+  },
+  "installation": {
+    "target": ".codebuddy/skills/portable-skill-creator",
+    "target_preexisting": false,
+    "status": "exported",
+    "file_count": 49,
+    "verify_after_export": { "status": "pass", "errors": 0, "files": 47, "scope": "structure_only" },
+    "evidence": ["evidence/export-source.txt", "evidence/verify-exported.txt"]
+  },
+  "checks": [
+    {
+      "id": "C1",
+      "name": "bootstrap.ps1 original run",
+      "mode": "live",
+      "command": "& <ws>/source/scripts/bootstrap.ps1 -Root <ws>/runtime",
+      "exit_code": null,
+      "result": "failed",
+      "detail": "Terminating error: Windows 11 or newer build required; other systems untested (build 20348 < 22000)",
+      "repro": "Same failure with -Prepare and with -Python; gate evaluated before arguments",
+      "evidence": ["evidence/bootstrap-original.txt", "evidence/bootstrap-original-prepare.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C2",
+      "name": "bootstrap.ps1 patched copy (gate relaxed only)",
+      "mode": "live",
+      "command": "& <ws>/patched/scripts/bootstrap.ps1 -Root <ws>/runtime",
+      "exit_code": 0,
+      "result": "pass",
+      "detail": "status=ready, scope=creator_runtime_only, python=C:\\Program Files\\Python312\\python.exe, cloud_api_called=false",
+      "modification": "local 1-line patch, see evidence/bootstrap-patch.diff; original result kept separate; not pushed",
+      "evidence": ["evidence/bootstrap-patched.txt", "evidence/bootstrap-patch.diff"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C3",
+      "name": "verify on source",
+      "mode": "static",
+      "command": "\"C:\\Program Files\\Python312\\python.exe\" -B scripts/creator.py verify .",
+      "exit_code": 0,
+      "result": "pass",
+      "detail": "0 errors, 47 files, structure_only",
+      "evidence": ["evidence/verify-source.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C4",
+      "name": "verify on installed skill",
+      "mode": "static",
+      "command": "verify .codebuddy/skills/portable-skill-creator",
+      "exit_code": 0,
+      "result": "pass",
+      "evidence": ["evidence/verify-exported.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C5",
+      "name": "repository unittest",
+      "mode": "live",
+      "command": "\"C:\\Program Files\\Python312\\python.exe\" -B -m unittest discover -s tests -v",
+      "cwd": "source",
+      "exit_code": 0,
+      "result": "pass",
+      "passed": 12,
+      "failed": 0,
+      "detail": "Ran 12 tests in 1.366s — OK",
+      "evidence": ["evidence/unittest-source.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C6",
+      "name": "host skill discovery",
+      "mode": "static",
+      "exit_code": null,
+      "result": "not_confirmed",
+      "detail": "Skill files readable by host tools; registry-level discovery requires the acceptance project as working directory. Current session skill list has no portable-skill-creator; skill_management list returned empty.",
+      "evidence": ["evidence/discovery-status.txt", "evidence/cli-probe.txt"],
+      "manual_handoff": true,
+      "handoff": "See HANDOFF.md section 1"
+    },
+    {
+      "id": "C7",
+      "name": "json-to-csv sample conversion (dir with Chinese + spaces)",
+      "mode": "live",
+      "command": "\"C:\\Program Files\\Python312\\python.exe\" scripts/convert.py examples/input.json \"out/结果 输出.csv\"",
+      "exit_code": 0,
+      "result": "pass",
+      "detail": "2 data rows; fields [name,count]; 中文, item -> 2; second -> 0; quoted comma field roundtrip ok; UTF-8 with CRLF",
+      "evidence": ["evidence/sample-convert.txt", "evidence/sample-parse.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C8",
+      "name": "json-to-csv overwrite refusal",
+      "mode": "live",
+      "command": "same output path re-run",
+      "exit_code": 2,
+      "result": "pass",
+      "detail": "Output already exists; choose a new output path. Existing file preserved. sha256 unchanged e1ddb652f253414994253c0627295bad3175b6827c31ca5db3aed78e07b912aa",
+      "evidence": ["evidence/sample-overwrite-refusal.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C9",
+      "name": "export conflict protection",
+      "mode": "live",
+      "command": "export skills-src/acceptance-note-triage recipient/acceptance-note-triage (second time)",
+      "exit_code": 2,
+      "result": "pass",
+      "detail": "Destination must be new and outside source; existing directory untouched",
+      "evidence": ["evidence/export-conflict.txt"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C10",
+      "name": "generated skill structure check",
+      "mode": "static",
+      "result": "pass",
+      "detail": "verify pass 0 errors 6 files; inspect 0 findings (no absolute paths, no scripts, no cloud/env refs)",
+      "evidence": ["evidence/verify-authored.txt", "tasks/acceptance-note-triage/inspect-skill.json"],
+      "manual_handoff": false
+    },
+    {
+      "id": "C11",
+      "name": "browser read of https://agentskills.io/home",
+      "mode": "live",
+      "result": "blocked",
+      "detail": "Extension installed (WorkBuddy 0.2.7) but native messaging host com.workbuddy.extension not registered; no browser-control tool in session; tab not shared",
+      "page_url_final": "unknown",
+      "page_title": "unknown",
+      "checkable_fact": "unknown",
+      "read_time": "unknown",
+      "evidence": ["evidence/browser-status.txt"],
+      "manual_handoff": true,
+      "handoff": "See HANDOFF.md section 3"
+    }
+  ],
+  "generated_skill": {
+    "name": "acceptance-note-triage",
+    "version": "0.1.0",
+    "author_source": "skills-src/acceptance-note-triage",
+    "recipient_export": "recipient/acceptance-note-triage",
+    "kind": "pure instruction, no runtime dependency",
+    "dependencies": [{ "id": "host-files", "kind": "host", "handling": "read input text, write one Markdown file" }],
+    "file_count": 8,
+    "files_sha256": {
+      "SKILL.md": "758092a6f1822cab627997face4c4e101f9c53e425693369a01f044245fabb11",
+      "delivery.json": "31adf944ff3774a915217d95108cbb204c0a0f14152fcc6bf8b9fb7df3639371",
+      "examples/input.txt": "258d9e8af60b260d165251fa34c9e792f1bc158c1749f963091398e54d74b6eb",
+      "installed.json": "ae4268398d86fd326b91993244b3a2ec3c28144b80e058f5639bdcd9bdebcc01",
+      "references/en/acceptance.md": "8c0323100334c3887cc710d01f7ced32e1ced725dc1505884e14095802c69f5b",
+      "references/en/task.md": "95599f6e1e7b4a2b6e1e880979f1e05bd7ab9489d89cb5bc7d3fcf6ce6a91618",
+      "references/zh-CN/acceptance.md": "2d73af0e8786f3af866cf0e050a8c2e04dde538c23c2c615afa64e210950c4f3",
+      "references/zh-CN/task.md": "26bfece9f37d191b3b5de15d4763829b3fe5478eff95943b88fc3a8155a059d0"
+    },
+    "excluded_from_delivery": ["task records", "author absolute paths", "acceptance report", "private config"],
+    "exclusion_checked_by": "grep scan, 0 hits; evidence/recipient-manifest.txt"
+  },
+  "recipient_acceptance": {
+    "isolation_level": "independent agents with fresh context (no author history); same machine, same model, same host process",
+    "new_session_independent": false,
+    "new_session_handoff": "HANDOFF.md section 2 (copy-paste prompt, skill path and input path included)",
+    "input_sha256": "258d9e8af60b260d165251fa34c9e792f1bc158c1749f963091398e54d74b6eb",
+    "input_item_count": 6,
+    "runs": [
+      {
+        "language": "zh-CN",
+        "instruction_language": "Chinese",
+        "result_file": "runs/zh/result-zh.md",
+        "groups": { "TODO": 2, "DONE": 2, "BLOCKED": 1, "UNMARKED": 1 },
+        "checks": { "heading_order": true, "verbatim_text": true, "within_group_order": true, "declared_counts": true, "total_equals_nonempty_lines": true },
+        "verdict": "pass",
+        "modules_read_selfreported": ["SKILL.md", "references/zh-CN/task.md", "references/zh-CN/acceptance.md"],
+        "used_script_or_dependency": false,
+        "evidence": ["evidence/check-zh.json"]
+      },
+      {
+        "language": "en",
+        "instruction_language": "English",
+        "result_file": "runs/en/result-en.md",
+        "groups": { "TODO": 2, "DONE": 2, "BLOCKED": 1, "UNMARKED": 1 },
+        "checks": { "heading_order": true, "verbatim_text": true, "within_group_order": true, "declared_counts": true, "total_equals_nonempty_lines": true },
+        "verdict": "pass",
+        "modules_read_selfreported": ["SKILL.md", "references/en/task.md", "references/en/acceptance.md"],
+        "used_script_or_dependency": false,
+        "evidence": ["evidence/check-en.json"]
+      }
+    ],
+    "cross_language_consistency": "identical grouping, text and counts in both languages",
+    "module_read_audit": "unknown - only recipient self-report available, no host access log"
+  },
+  "scenario_labels": {
+    "real_execution": true,
+    "static_check": true,
+    "simulated_scenario": true,
+    "same_machine_relocation": true,
+    "new_session_independent": false,
+    "clean_system_or_separate_device": false
+  },
+  "defects": [
+    {
+      "id": "D1",
+      "file": "scripts/bootstrap.ps1",
+      "line": 3,
+      "severity": "blocking on affected OS",
+      "summary": "Hard build-number gate throws before any argument handling, so bootstrap is unusable on Windows 10 / Server 2019 / Server 2022 even with a working Python 3.12",
+      "original_result": "throw 'Windows 11 or newer build required; other systems untested'",
+      "patched_result": "status=ready with C:\\Program Files\\Python312\\python.exe",
+      "diff": "evidence/bootstrap-patch.diff",
+      "suggested_fix": "Warn and continue with os_support=untested in the JSON result; or add an explicit -AllowUnsupportedOS switch; or document the affected versions",
+      "pushed_upstream": false
+    }
+  ],
+  "open_items": [
+    "Host skill-registry discovery not confirmed (needs acceptance project as working directory)",
+    "Real new-session recipient acceptance not executed (prompt prepared)",
+    "Browser evidence blocked: native messaging host com.workbuddy.extension not registered",
+    "Language module read audit unavailable (self-report only)",
+    "Model id at configuration layer unknown"
+  ],
+  "secrets_in_report": false
+}

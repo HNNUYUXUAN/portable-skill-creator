@@ -1,0 +1,40 @@
+{
+  "result": "runs/en/result-en.md",
+  "checks": {
+    "heading_order": true,
+    "group_TODO": {
+      "order_and_text_match": true,
+      "declared_count": 2,
+      "actual_items": 2,
+      "count_ok": true,
+      "diff": []
+    },
+    "group_DONE": {
+      "order_and_text_match": true,
+      "declared_count": 2,
+      "actual_items": 2,
+      "count_ok": true,
+      "diff": []
+    },
+    "group_BLOCKED": {
+      "order_and_text_match": true,
+      "declared_count": 1,
+      "actual_items": 1,
+      "count_ok": true,
+      "diff": []
+    },
+    "group_UNMARKED": {
+      "order_and_text_match": true,
+      "declared_count": 1,
+      "actual_items": 1,
+      "count_ok": true,
+      "diff": []
+    },
+    "total_items_equals_nonempty_lines": {
+      "items": 6,
+      "nonempty_lines": 6,
+      "ok": true
+    }
+  },
+  "ok": true
+}

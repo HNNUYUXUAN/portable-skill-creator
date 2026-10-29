@@ -1,0 +1,7 @@
+{
+  "step": "E15",
+  "status": "unknown",
+  "summary": "page-evidence browser read blocked: Chrome extension 0.2.7 installed but native messaging host com.workbuddy.extension not registered; no browser-control tool in this session",
+  "evidence": "evidence/browser-status.txt",
+  "next": "Operator enables browser control and shares the tab"
+}

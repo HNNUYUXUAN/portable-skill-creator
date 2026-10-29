@@ -1,0 +1,10 @@
+=== sample bootstrap.ps1 -Prepare (PATCHED, gate relaxed only) ===
+TIME: 2026-10-29T23:35:26.0554325+08:00
+EXITCODE: 0
+{
+  "cloud_api_called": false,
+  "python": "C:\\Program Files\\Python312\\python.exe",
+  "status": "ready",
+  "scope": "creator_runtime_only"
+}
+RETURNED_PYTHON: C:\Program Files\Python312\python.exe
