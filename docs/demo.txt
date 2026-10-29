@@ -1,0 +1,41 @@
+$ python scripts/creator.py verify .
+
+{
+  "schema_version": 1,
+  "status": "pass",
+  "errors": [],
+  "scope": "structure_only",
+  "files": 47
+}
+
+---
+
+$ python examples/json-to-csv/scripts/convert.py
+  examples/json-to-csv/examples/input.json output.csv
+
+Exit code: 0
+
+$ type output.csv
+name,count
+"中文, item",2
+second,0
+
+
+---
+
+VALIDATION
+
+{
+  "schema_version": 1,
+  "status": "pass",
+  "errors": [],
+  "scope": "structure_only",
+  "files": 47
+}
+
+JSON → CSV
+name,count
+"中文, item",2
+second,0
+
+12 behavioral tests passed

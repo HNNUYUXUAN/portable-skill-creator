@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "json-to-csv",
+  "version": "0.1.0-dev",
+  "files": [
+    "LICENSE",
+    "SKILL.md",
+    "assets/runtime.json",
+    "examples/input.json",
+    "references/en/task.md",
+    "references/zh-CN/task.md",
+    "scripts/bootstrap.ps1",
+    "scripts/convert.py"
+  ],
+  "requirements": [
+    {
+      "id": "python",
+      "kind": "rebuild",
+      "handling": "Run scripts/bootstrap.ps1 -Prepare. This stdlib-only sample needs no pip dependencies.",
+      "probe": {
+        "type": "command",
+        "name": "python"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "delivery": {
+    "required": [
+      "schema_version",
+      "name",
+      "version",
+      "files",
+      "requirements"
+    ],
+    "requirement_required": [
+      "id",
+      "kind",
+      "handling"
+    ],
+    "kinds": [
+      "bundle",
+      "rebuild",
+      "host",
+      "configure",
+      "input",
+      "unsupported"
+    ]
+  },
+  "event": {
+    "allowed": [
+      "step",
+      "status",
+      "summary",
+      "evidence",
+      "next",
+      "request_id"
+    ],
+    "states": [
+      "planned",
+      "executed",
+      "failed",
+      "unknown"
+    ],
+    "storage": "sanitized JSONL; single writer"
+  },
+  "checks": {
+    "evidence_types": [
+      "static",
+      "simulated",
+      "live",
+      "relocated",
+      "clean_system",
+      "separate_device"
+    ],
+    "support": [
+      "tested",
+      "documented",
+      "untested",
+      "unsupported"
+    ],
+    "note": "Presence and structure checks never promote support to tested."
+  }
+}

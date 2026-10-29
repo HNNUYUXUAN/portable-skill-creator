@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "page-evidence",
+  "version": "0.1.0-dev",
+  "files": [
+    "LICENSE",
+    "SKILL.md",
+    "references/en/task.md",
+    "references/zh-CN/task.md"
+  ],
+  "requirements": [
+    {
+      "id": "browser",
+      "kind": "host",
+      "handling": "Use the recipient host browser connector; verify actual page access"
+    }
+  ]
+}
